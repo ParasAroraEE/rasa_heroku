@@ -2,5 +2,9 @@ build:
   docker:
     web: Dockerfile
 run:
-  web: run python -m rasa_core.run --enable_api --core models -c rest --endpoints config/endpoints.yml --credentials config/credentials.yml -u current/
+  web: run python -m rasa_core.run --enable_api --core models -c rest --endpoints endpoints.yml --credentials credentials.yml -u current/
   actions: echo test
+  
+#   rasa run -p $PORT -m models --credentials credentials.yml --enable-api --log-file out.log --endpoints endpoints.yml” | sed ‘s/=//’)
+# web: run python -m rasa_core.run --enable_api --core models -c rest --endpoints config/endpoints.yml --credentials config/credentials.yml -u current/
+#   actions: echo test
