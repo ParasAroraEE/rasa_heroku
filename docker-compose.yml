@@ -6,7 +6,7 @@ services:
     env_file: 
       - ./.env
     build: .
-    image: rasa-chatbot:latest
+    image: rasa_heroku:latest
     ports:
       - 5005:5005
     volumes:
@@ -21,17 +21,17 @@ services:
       - --endpoints
       - /app/config/endpoints.local.yml
 
-  action_server:
-    env_file: 
-      - ./.env
-    build: actions
-    image: rasa-chatbot-actions:latest
-    volumes:
-      - ./actions:/app/actions
-    command:
-      - python3
-      - -m
-      - rasa_sdk
-      - --actions
-      - actions
+#   action_server:
+#     env_file: 
+#       - ./.env
+#     build: actions
+#     image: rasa-chatbot-actions:latest
+#     volumes:
+#       - ./actions:/app/actions
+#     command:
+#       - python3
+#       - -m
+#       - rasa_sdk
+#       - --actions
+#       - actions
 
